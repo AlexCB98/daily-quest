@@ -1,9 +1,28 @@
 import tkinter as tk
+from tkinter import messagebox
 from constants import *
 
+current = 12930
+target = 20000
 
 def add():
-    pass
+    global current
+
+    try:
+        value = int(entry.get())
+
+    except ValueError:
+        messagebox.showwarning(title='Oupss', message='Make sure you inserted just numbers. ^^')
+    else:
+        if value > 0:
+            current += value
+            progress_label.config(text=f'Progress: {current} / {target}')
+        else:
+            messagebox.showwarning(title='Oupss', message='Please enter a number greater than 0. ^^')
+
+    finally:
+        entry.delete(0, tk.END)
+
 
 window = tk.Tk()
 window.title('Daily Quest v0.1.0')
@@ -14,7 +33,7 @@ title_label = tk.Label(text='Push-ups', bg=TEAL_BLUE,
                        fg=CREAM_SAND, font= TITLE_FONT)
 title_label.grid(row= 0, column= 0, columnspan= 3)
 
-progress_label = tk.Label(text='Progress: 12930 / 20000', bg=TEAL_BLUE,
+progress_label = tk.Label(text=f'Progress: {current} / {target}', bg=TEAL_BLUE,
                           fg=CREAM_SAND, font= PROGRESS_FONT)
 progress_label.config(padx= 20, pady= 50)
 progress_label.grid(row= 1, column= 0, columnspan= 3)
