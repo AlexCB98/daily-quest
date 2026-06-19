@@ -1,0 +1,7 @@
+TITLE_FONT = ('Arial', 20, 'bold')
+PROGRESS_FONT = ('Arial', 15, 'bold')
+
+TEAL_BLUE = "#3F9AAE"
+LIGHT_TURQUOISE = "#79C9C5"
+CREAM_SAND = "#FFE2AF"
+CORAL_RED = "#F96E5B"
