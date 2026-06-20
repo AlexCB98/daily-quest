@@ -1,9 +1,9 @@
+import json
 import tkinter as tk
 from tkinter import messagebox
 from constants import *
 
-current = 12930
-target = 20000
+
 
 def add():
     global current
@@ -16,12 +16,38 @@ def add():
     else:
         if value > 0:
             current += value
+
+            quest['pushups']['current'] = current
+
+            with open('data.json', 'w') as data:
+                json.dump(quest, data, indent=4)
+
             progress_label.config(text=f'Progress: {current} / {target}')
         else:
             messagebox.showwarning(title='Oupss', message='Please enter a number greater than 0. ^^')
 
     finally:
         entry.delete(0, tk.END)
+
+try:
+    with open('data.json', 'r') as data:
+        quest = json.load(data)
+
+except FileNotFoundError:
+    quest = {
+        "pushups": {
+            "current": 0,
+            "target": 20000,
+            "start_date": "2026-06-20"
+        }
+    }
+
+    with open('data.json', 'w') as data:
+        json.dump(quest, data, indent= 4)
+
+
+current = quest['pushups']['current']
+target = quest['pushups']['target']
 
 
 window = tk.Tk()
