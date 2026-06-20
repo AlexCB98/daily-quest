@@ -15,21 +15,28 @@ This project is designed to track long-term goals, daily habits, and personal ch
 * Add daily push-ups progress
 * Input validation
 * Error handling for invalid values
+* JSON data persistence
+* Automatic creation of `data.json` if the file does not exist
+* Basic handling for missing or corrupted JSON data
+* Saved progress between app restarts
+* Automatic challenge start date
+* Automatic challenge day counter
 * Progress display updates in real time
 
 ---
 
 ## Planned Features
 
-* JSON data persistence
-* Automatic day counter
 * Multiple challenges
 * Cold shower tracker
 * Python study tracker
 * Reading tracker
 * Meditation tracker
 * Challenge editing
+* Custom challenge creation from the interface
 * Statistics and progress reports
+* Progress percentage display
+* Better UI layout and styling
 
 ---
 
@@ -43,6 +50,12 @@ This project is designed to track long-term goals, daily habits, and personal ch
 * Global variables
 * Exception handling
 * Input validation
+* JSON file handling
+* Reading data with `json.load()`
+* Writing data with `json.dump()`
+* Saving application state
+* Working with dates using `datetime.date`
+* Calculating the current challenge day
 * Dynamic UI updates
 
 ---
@@ -51,6 +64,7 @@ This project is designed to track long-term goals, daily habits, and personal ch
 
 * Python
 * Tkinter
+* JSON
 
 ---
 
